@@ -1,0 +1,48 @@
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --bg-color: #181818;
+    --strong-color: #fff;
+    --light-color: #bfbfbf;
+    --mobile-small-font: 1.6rem;
+    --mobile-medium-font: 2.4rem;
+    --mobile-large-font: 4rem;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+.container {
+    margin: 0 0.5rem;
+}
+
+h1,h3,h4{
+    color: var(--strong-color);
+}
+
+p{
+    color: var(--light-color);
+}
+
+.hero-greeting {
+    font-size: var(--mobile-small-font);
+}
+
+.hero-pitch {
+    font-size: var(--mobile-large-font);
+}
+
+.section-title {
+    font-size: var(--mobile-medium-font);
+}
+
+.project-title {
+    font-size: var(--mobile-medium-font);
+}
+
+.project-description {
+    font-size: var(--mobile-small-font);
+}
