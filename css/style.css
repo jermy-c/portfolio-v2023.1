@@ -10,6 +10,7 @@ html {
     --strong-color: #fff;
     --light-color: #bfbfbf;
     --accent-color-dark: #20B46A;
+    --accent-color-light: #00CE79;
 
     /* Font */
     --regular-fw: 400;
@@ -41,6 +42,8 @@ h1,h3,h4 {
 
 p {
     color: var(--light-color);
+    font-size: var(--mobile-small-font);
+    line-height: 2em;
 }
 
 section {
@@ -115,4 +118,82 @@ section {
     height: 100%;
     width: 100%;
     object-fit: contain;
+}
+
+.experience-item {
+    position: relative;
+    padding-left: 2rem;
+    padding-bottom: 10rem;
+}
+
+.experience-item::before {
+    position: absolute;
+    left: -8px;
+    top: 10px;
+    content: " ";
+    border: 5px solid var(--accent-color-dark);
+    border-radius: 500%;
+    background: var(--bg-color);
+    height: 10px;
+    width: 10px;
+    z-index: 50;
+}
+
+.experience-item::after {
+    content : "";
+    position: absolute;
+    left    : 0;
+    top  : 0;
+    width  : 5px;
+    height   : 100%;  
+    background: var(--accent-color-dark);
+}
+
+.experience-item.first::after {
+    content : "";
+    position: absolute;
+    left    : 0;
+    top  : 10%;
+    width  : 5px;
+    height   : 90%; 
+    background: var(--accent-color-dark);
+}
+
+.experience-item.last::after {
+    content : "";
+    position: absolute;
+    left    : 0;
+    top  : 0;
+    width  : 5px;
+    height   : 10%;  
+    background: var(--accent-color-dark);
+}
+
+.experience-item h4 {
+    font-size: var(--mobile-medium-font);
+    font-weight: var(--bold-fw);
+    margin: 0;
+}
+
+.experience-item em {
+    color: var(--accent-color-dark);
+    font-size: var(--mobile-small-font);
+    font-weight: var(--semibold-fw);
+    margin: 0;
+}
+
+.experience-item p {
+    font-size: var(--mobile-small-font);
+    margin: 0;
+}
+
+.about-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.about-container p {
+    font-size: var(--mobile-small-font);
+    margin-top: 2em;
 }
