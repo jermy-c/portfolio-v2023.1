@@ -197,3 +197,35 @@ section {
     font-size: var(--mobile-small-font);
     margin-top: 2em;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    color: var(--strong-color);
+    font-size: var(--mobile-small-font);
+    font-weight: var(--regular-fw);
+    line-height: 2em;
+}
+
+form input, form textarea {
+    background-color: var(--light-color);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    border: none;
+}
+
+button {
+    background-color: var(--accent-color-dark);
+    border: none;
+    border-radius: 0.25rem;
+    color: var(--strong-color);
+    font-weight: var(--bold-fw);
+    font-size: var(--mobile-small-m-font);
+    padding: 1rem 1.5rem;
+    width: fit-content;
+    text-decoration: none;
+    margin-top: 2rem;
+}
