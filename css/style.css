@@ -199,6 +199,12 @@ section {
     margin-top: 2em;
 }
 
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -243,4 +249,22 @@ button {
     padding: 1rem 1.5rem;
     width: fit-content;
     text-decoration: none;
+}
+
+.other-contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.other-contact a {
+    font-size: var(--mobile-small-font);
+    color: var(--light-color);
+}
+
+.other-contact a img {
+    display: flex;
+    align-items: center;
+    height: 4rem;
 }
