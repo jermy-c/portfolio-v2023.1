@@ -11,6 +11,7 @@ html {
     --light-color: #bfbfbf;
     --accent-color-dark: #20B46A;
     --accent-color-light: #00CE79;
+    --input-bg-color: #535353;
 
     /* Font */
     --regular-fw: 400;
@@ -165,7 +166,7 @@ section {
     left    : 0;
     top  : 0;
     width  : 5px;
-    height   : 10%;  
+    height   : 2rem;  
     background: var(--accent-color-dark);
 }
 
@@ -201,6 +202,7 @@ section {
 form {
     display: flex;
     flex-direction: column;
+    gap: 0.5em;
 }
 
 form label {
@@ -211,10 +213,24 @@ form label {
 }
 
 form input, form textarea {
-    background-color: var(--light-color);
+    background-color: var(--input-bg-color);
     border-radius: 0.5rem;
     padding: 1rem;
     border: none;
+    color: var(--strong-color);
+    font-size: var(--mobile-small-font);
+    font-weight: var(--regular-fw);
+    letter-spacing: 0.07em;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 1em;
+}
+
+form input[input=text]:focus, form textarea:focus {
+    border: none;
+}
+
+textarea {
+    resize: vertical;
 }
 
 button {
@@ -227,5 +243,4 @@ button {
     padding: 1rem 1.5rem;
     width: fit-content;
     text-decoration: none;
-    margin-top: 2rem;
 }

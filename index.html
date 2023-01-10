@@ -80,13 +80,13 @@
         <section class="contact-section">
             <h3 class="section-title">Experience</h3>
             <p>Feel free to contact me any time, through any method below.</p>
-            <form action="" netlify>
+            <form name="contact" method="POST" netlify>
                 <label>Name</label>
-                <input type="text" name="name">
+                <input type="text" name="name" required>
                 <label>Email</label>
-                <input type="text" name="name">
+                <input type="email" name="email" required>
                 <label>Message</label>
-                <textarea name="message" id="" cols="30" rows="10"></textarea>
+                <textarea name="message" id="" cols="30" rows="10" required></textarea>
                 <button type="submit">Send</button>
             </form>
         </section>
