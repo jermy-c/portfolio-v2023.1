@@ -26,6 +26,14 @@ html {
     --mobile-medium-font: 2.4rem;
     --mobile-large-font: 4rem;
 
+
+    /* Tablet */
+    --tablet-t-font: 1.6rem;
+    --tablet-s-font: 2rem;
+    --tablet-m-font: 2.4rem;
+    --tablet-l-font: 3.6rem;
+    --tablet-xl-font: 6.4rem;
+
 }
 
 body {
@@ -214,7 +222,7 @@ form {
 form label {
     color: var(--strong-color);
     font-size: var(--mobile-small-font);
-    font-weight: var(--regular-fw);
+    font-weight: var(--medium-fw);
     line-height: 2em;
 }
 
@@ -267,4 +275,80 @@ button {
     display: flex;
     align-items: center;
     height: 4rem;
+}
+
+/* Tablet CSS */
+@media only screen and (min-width: 744px) {
+
+    .container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .hero-greeting {
+        font-size: var(--tablet-m-font);
+    }
+
+    .hero-pitch {
+        font-size: var(--tablet-xl-font);
+    }
+
+    .hero-btn {
+        font-size: var(--tablet-s-font);
+    }
+
+    .section-title {
+        font-size: var(--tablet-m-font);
+    }
+
+    .project-title {
+        font-size: var(--tablet-l-font);
+    }
+
+    .project-description {
+        font-size: var(--tablet-s-font);
+    }
+
+    .experience-item {
+        padding-left: 4rem;
+    }
+
+    .experience-item::before {
+        left: -14px;
+        border-width: 7px;
+        height: 20px;
+        width: 20px;
+    }
+
+    .experience-item::after, .experience-item.first::after, .experience-item.last::after {
+        width: 7px;
+    }
+
+    .experience-item h4 {
+        font-size: var(--tablet-l-font);
+    }
+
+    .experience-item em {
+        font-size: var(--tablet-m-font);
+    }
+
+    .experience-item p {
+        font-size: var(--tablet-s-font);
+    }
+
+    .about-container p {
+        font-size: var(--tablet-s-font);
+    }
+
+    .description {
+        font-size: var(--tablet-s-font);
+    }
+
+    form label, form input, form textarea, form button {
+        font-size: var(--tablet-s-font);
+    }
+
+    .other-contact a {
+        font-size: var(--tablet-s-font);
+    }
 }
