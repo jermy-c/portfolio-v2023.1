@@ -34,6 +34,13 @@ html {
     --tablet-l-font: 3.6rem;
     --tablet-xl-font: 6.4rem;
 
+    /* Desktop */
+    --desktop-t-font: 2rem;
+    --desktop-s-font: 2.4rem;
+    --desktop-m-font: 3.2rem;
+    --desktop-l-font: 4rem;
+    --desktop-xl-font: 8rem;
+
 }
 
 body {
@@ -350,5 +357,100 @@ button {
 
     .other-contact a {
         font-size: var(--tablet-s-font);
+    }
+}
+
+/* Tablet CSS */
+@media only screen and (min-width: 1024px) {
+
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 90vw;
+        overscroll-behavior-x: hidden;
+    }
+
+    #hero-section {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #hero-section .col-2 {
+        position: relative;
+    }
+
+    #hero-section .col-2 img {
+        position: absolute;
+        top: -30rem;
+        left: -16rem;
+        height: 164.3rem;
+        width: 164.3rem;
+    }
+
+    .hero-greeting {
+        font-size: var(--desktop-m-font);
+    }
+
+    .hero-pitch {
+        font-size: var(--desktop-xl-font);
+    }
+
+    .hero-btn {
+        font-size: var(--desktop-s-font);
+    }
+
+    .section-title {
+        font-size: var(--desktop-m-font);
+    }
+
+    .project-title {
+        font-size: var(--desktop-l-font);
+    }
+
+    .project-description {
+        font-size: var(--desktop-s-font);
+    }
+
+    .experience-item {
+        padding-left: 4rem;
+    }
+
+    .experience-item::before {
+        left: -14px;
+        border-width: 7px;
+        height: 20px;
+        width: 20px;
+    }
+
+    .experience-item::after, .experience-item.first::after, .experience-item.last::after {
+        width: 7px;
+    }
+
+    .experience-item h4 {
+        font-size: var(--desktop-l-font);
+    }
+
+    .experience-item em {
+        font-size: var(--desktop-m-font);
+    }
+
+    .experience-item p {
+        font-size: var(--desktop-s-font);
+    }
+
+    .about-container p {
+        font-size: var(--desktop-s-font);
+    }
+
+    .description {
+        font-size: var(--desktop-s-font);
+    }
+
+    form label, form input, form textarea, form button {
+        font-size: var(--desktop-s-font);
+    }
+
+    .other-contact a {
+        font-size: var(--desktop-s-font);
     }
 }
