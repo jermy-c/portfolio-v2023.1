@@ -46,7 +46,7 @@ html {
 body {
     background-color: var(--bg-color);
     font-family: 'Poppins', sans-serif; 
-    overflow-x: clip;
+    overflow-x: hidden;
 }
 
 .container {
@@ -381,6 +381,7 @@ button {
         position: absolute;
         margin-top: 10rem;
         width: 50%;
+        max-width: 70rem;
         z-index: 10;
     }
 
