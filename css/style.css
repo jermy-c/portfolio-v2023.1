@@ -45,7 +45,8 @@ html {
 
 body {
     background-color: var(--bg-color);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif; 
+    overflow-x: clip;
 }
 
 .container {
@@ -85,10 +86,6 @@ section {
     margin: 8rem 0;
 }
 
-#hero-section .col-2 {
-    width: 100%;
-}
-
 .hero-btn {
     background-color: var(--accent-color-dark);
     border-radius: 0.25rem;
@@ -100,7 +97,7 @@ section {
     text-decoration: none;
 }
 
-.col-2 img {
+#hero-section img {
     height: 100%;
     width: 100%;
     object-fit: contain;
@@ -365,7 +362,26 @@ button {
 @media only screen and (min-width: 1024px) {
 
     .container {
-        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 90vw;
+    }
+
+    section {
+        margin: 40rem 0;
+    }
+
+    #hero-section {
+        display: flex;
+        flex-direction: row;
+        height: 110rem;
+    }
+
+    #hero-section .col {
+        position: absolute;
+        margin-top: 10rem;
+        width: 50%;
+        z-index: 10;
     }
 
     .hero-greeting {
@@ -380,8 +396,23 @@ button {
         font-size: var(--tablet-s-font);
     }
 
+    #hero-section img {
+        position: relative;
+        height: 164rem;
+        width: 164rem;
+        top: -30rem;
+        right: -60rem;
+        z-index: -1;
+    }
+
     .section-title {
         font-size: var(--tablet-m-font);
+    }
+
+    .project-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 
     .project-title {
@@ -393,11 +424,13 @@ button {
     }
 
     .experience-item {
+        width: calc(50% - 3rem);
+        position: relative;
         padding-left: 4rem;
+        margin-left: auto;
     }
 
     .experience-item::before {
-        left: -14px;
         border-width: 7px;
         height: 20px;
         width: 20px;
@@ -419,6 +452,30 @@ button {
         font-size: var(--tablet-s-font);
     }
 
+    .experience-item.first, .experience-item.last {
+        text-align: right;
+        padding-left: 0;
+        padding-right: 4rem;
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .experience-item.first::before, .experience-item.last::before {
+        left: auto;
+        right: -0.6rem;
+    }
+
+    .experience-item.first::after, .experience-item.last::after {
+        left: auto;
+        right: 0.7rem;
+    }
+
+    .about-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
     .about-container p {
         font-size: var(--tablet-s-font);
     }
@@ -427,8 +484,26 @@ button {
         font-size: var(--tablet-s-font);
     }
 
+    .contact-container {
+        flex-direction: row;
+        justify-items: stretch;
+    }
+
+    form {
+        width: 50%;
+    }
+
     form label, form input, form textarea, form button {
         font-size: var(--tablet-s-font);
+    }
+
+    .other-contact {
+        width: auto;
+        margin-top: 4rem;
+        flex-direction: column;
+        gap: 10rem;
+        justify-content: flex-start;
+        align-items: start;
     }
 
     .other-contact a {
@@ -436,97 +511,11 @@ button {
     }
 }
 
-/* Tablet CSS */
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1920px) {
 
     .container {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 90vw;
-        overscroll-behavior-x: hidden;
+        max-width: 1680px;
+        margin: auto;
     }
 
-    #hero-section {
-        display: flex;
-        flex-direction: row;
-    }
-
-    #hero-section .col-2 {
-        position: relative;
-    }
-
-    #hero-section .col-2 img {
-        position: absolute;
-        top: -30rem;
-        left: -16rem;
-        height: 164.3rem;
-        width: 164.3rem;
-    }
-
-    .hero-greeting {
-        font-size: var(--desktop-m-font);
-    }
-
-    .hero-pitch {
-        font-size: var(--desktop-xl-font);
-    }
-
-    .hero-btn {
-        font-size: var(--desktop-s-font);
-    }
-
-    .section-title {
-        font-size: var(--desktop-m-font);
-    }
-
-    .project-title {
-        font-size: var(--desktop-l-font);
-    }
-
-    .project-description {
-        font-size: var(--desktop-s-font);
-    }
-
-    .experience-item {
-        padding-left: 4rem;
-    }
-
-    .experience-item::before {
-        left: -14px;
-        border-width: 7px;
-        height: 20px;
-        width: 20px;
-    }
-
-    .experience-item::after, .experience-item.first::after, .experience-item.last::after {
-        width: 7px;
-    }
-
-    .experience-item h4 {
-        font-size: var(--desktop-l-font);
-    }
-
-    .experience-item em {
-        font-size: var(--desktop-m-font);
-    }
-
-    .experience-item p {
-        font-size: var(--desktop-s-font);
-    }
-
-    .about-container p {
-        font-size: var(--desktop-s-font);
-    }
-
-    .description {
-        font-size: var(--desktop-s-font);
-    }
-
-    form label, form input, form textarea, form button {
-        font-size: var(--desktop-s-font);
-    }
-
-    .other-contact a {
-        font-size: var(--desktop-s-font);
-    }
 }
