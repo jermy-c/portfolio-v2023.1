@@ -2,6 +2,8 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 8rem;
 }
 
 :root {
@@ -58,8 +60,8 @@ header {
     position: sticky;
     width: 100%;
     background-color: var(--bg-color);
-    z-index: 100;
-    padding: 0.1rem 0;
+    z-index: 50;
+    padding: 1rem 0;
 }
 
 .header-container {
@@ -76,9 +78,41 @@ header {
     color: var(--strong-color);
 }
 
-header nav ul {
-    display: none
+header nav {
+    position: absolute;
+    top: -250px;
 }
+
+header nav.open {
+    height: fit-content;
+    width: 100%;
+    background-color: var(--bg-color);
+    z-index: 50;
+    top: 5rem;
+    left: 0;
+    box-shadow: 0 10px 10px 0px rgba(255, 255, 255, 0.1);
+}
+
+header nav ul {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin-inline-start: 0;
+    gap: 2em;
+    padding-inline-start: 0;
+    text-align: center;
+    padding-bottom: 2em;
+    transition: 0.3s;
+}
+
+header nav ul a {
+    color: var(--strong-color);
+    text-decoration: none;
+    font-size: var(--mobile-medium-font);
+    font-weight: var(--regular-fw);
+}
+
 
 .cta {
     background-color: var(--accent-color-dark);
@@ -89,6 +123,55 @@ header nav ul {
     padding: 0.3rem 0.75rem;
     width: fit-content;
     text-decoration: none;
+    margin-right: 4rem;
+}
+
+.hamburger {
+    cursor: pointer;
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    transition: all 0.25s;
+    right: 0;
+}
+
+.hamburger__top-bun,
+.hamburger__bottom-bun {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 15px;
+    width: 18px;
+    height: 2px;
+    background: var(--light-color);
+    transform: rotate(0);
+    transition: all 0.25s;
+}
+
+.hamburger__top-bun {
+    top: 23px;
+    transform: translateY(-3px);
+}
+
+.hamburger__bottom-bun {
+    bottom: 23px;
+    transform: translateY(3px);
+}
+
+.hamburger.open {
+    transform: rotate(90deg);
+}
+
+.hamburger.open .hamburger__top-bun {
+    transform: 
+        rotate(45deg) 
+        translateY(0px);
+}
+
+.hamburger.open .hamburger__bottom-bun {
+    transform: 
+        rotate(-45deg) 
+        translateY(0px);
 }
 
 h1,h3,h4 {
@@ -326,6 +409,10 @@ button {
         margin-left: 1rem;
         margin-right: 1rem;
     }
+    
+    .header-container .logo {
+        font-size: var(--tablet-s-font);
+    }
 
     .hero-greeting {
         font-size: var(--tablet-m-font);
@@ -414,7 +501,7 @@ button {
         padding: 0.1rem 0;
     }
 
-    .header-container {
+    header .header-container {
         display: flex;
         flex-direction: row;
         max-width: 90vw;
@@ -423,10 +510,15 @@ button {
         justify-content: space-between;
     }
 
-    header .logo {
+    .header-container .logo {
         font-size: var(--desktop-s-font);
         font-weight: var(--semibold-fw);
         color: var(--strong-color);
+    }
+
+    header nav {
+        position: relative;
+        top: auto;
     }
 
     header nav ul {
@@ -436,22 +528,29 @@ button {
         font-weight: var(--regular-fw);
         list-style: none;
         gap: 3em;
+        padding: 0;
     }
 
     header nav ul a {
+        font-size: var(--desktop-t-font);
         color: var(--light-color);
-        text-decoration: none;
     }
+
 
     .cta {
         background-color: var(--accent-color-dark);
         border-radius: 0.25rem;
         color: var(--strong-color);
         font-weight: var(--bold-fw);
-        font-size: var(--mobile-small-m-font);
+        font-size: var(--desktop-s-font);
         padding: 1rem 1.5rem;
         width: fit-content;
         text-decoration: none;
+        margin: 0;
+    }
+
+    .hamburger {
+        display: none;
     }
 
     section {
@@ -473,15 +572,15 @@ button {
     }
 
     .hero-greeting {
-        font-size: var(--tablet-m-font);
+        font-size: var(--desktop-m-font);
     }
 
     .hero-pitch {
-        font-size: var(--tablet-xl-font);
+        font-size: var(--desktop-xl-font);
     }
 
     .hero-btn {
-        font-size: var(--tablet-s-font);
+        font-size: var(--desktop-s-font);
     }
 
     #hero-section img {
@@ -494,7 +593,7 @@ button {
     }
 
     .section-title {
-        font-size: var(--tablet-m-font);
+        font-size: var(--desktop-m-font);
     }
 
     .project-row {
@@ -504,11 +603,11 @@ button {
     }
 
     .project-title {
-        font-size: var(--tablet-l-font);
+        font-size: var(--desktop-l-font);
     }
 
     .project-description {
-        font-size: var(--tablet-s-font);
+        font-size: var(--desktop-s-font);
     }
 
     .experience-item {
@@ -529,15 +628,15 @@ button {
     }
 
     .experience-item h4 {
-        font-size: var(--tablet-l-font);
+        font-size: var(--desktop-l-font);
     }
 
     .experience-item em {
-        font-size: var(--tablet-m-font);
+        font-size: var(--desktop-m-font);
     }
 
     .experience-item p {
-        font-size: var(--tablet-s-font);
+        font-size: var(--desktop-s-font);
     }
 
     .experience-item.first, .experience-item.last {
@@ -565,11 +664,11 @@ button {
     }
 
     .about-container p {
-        font-size: var(--tablet-s-font);
+        font-size: var(--desktop-s-font);
     }
 
     .description {
-        font-size: var(--tablet-s-font);
+        font-size: var(--desktop-s-font);
     }
 
     .contact-container {
@@ -582,7 +681,7 @@ button {
     }
 
     form label, form input, form textarea, form button {
-        font-size: var(--tablet-s-font);
+        font-size: var(--desktop-s-font);
     }
 
     .other-contact {
@@ -595,13 +694,13 @@ button {
     }
 
     .other-contact a {
-        font-size: var(--tablet-s-font);
+        font-size: var(--desktop-s-font);
     }
 }
 
 @media only screen and (min-width: 1920px) {
 
-    .container, .header-container {
+    .container, header .header-container {
         max-width: 1680px;
         margin: auto;
     }
