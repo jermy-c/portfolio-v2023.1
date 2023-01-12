@@ -213,7 +213,7 @@ section {
     color: var(--strong-color);
     font-weight: var(--bold-fw);
     font-size: var(--mobile-small-m-font);
-    padding: 0.5rem 0.75rem;
+    padding: 0.5em 0.75em;
     width: fit-content;
     text-decoration: none;
 }
