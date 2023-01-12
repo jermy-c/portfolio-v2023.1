@@ -9,7 +9,29 @@
 </head>
 <body>
 
+    <header>
+        <div class="header-container">
+            <div class="logo">Jeremy Chang</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#projects-section">Projects</a></li>
+                    <li><a href="#experience-section">Experience</a></li>
+                    <li><a href="#about-section">About</a></li>
+                </ul>
+            </nav>
+            <a class="cta" href="#contact-section">Let's Talk</a>
+            <div class="burger-container">
+                <div id="burger">
+                  <div class="bar topBar"></div>
+                  <div class="bar btmBar"></div>
+                </div>   
+              </div>
+        </div>
+    </header>
+
     <div class="container">
+
         <section id="hero-section">
             <div class="col">
                 <p class="hero-greeting">Hi, I'm Jeremy</p>
@@ -80,8 +102,8 @@
             </div>
         </section>
 
-        <section class="contact-section">
-            <h3 class="section-title">Experience</h3>
+        <section id="contact-section">
+            <h3 class="section-title">Let's Talk</h3>
             <p class="description">Feel free to contact me any time, through any method below.</p>
             <div class="contact-container">
                 <form name="contact" method="POST" netlify-honeypot="bot-field" netlify>

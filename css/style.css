@@ -44,6 +44,7 @@ html {
 }
 
 body {
+    margin: 0;
     background-color: var(--bg-color);
     font-family: 'Poppins', sans-serif; 
     overflow-x: hidden;
@@ -51,6 +52,43 @@ body {
 
 .container {
     margin: 0 0.5rem;
+}
+
+header {
+    position: sticky;
+    width: 100%;
+    background-color: var(--bg-color);
+    z-index: 100;
+    padding: 0.1rem 0;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    margin: 0 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container .logo {
+    font-size: var(--mobile-small-font);
+    font-weight: var(--semibold-fw);
+    color: var(--strong-color);
+}
+
+header nav ul {
+    display: none
+}
+
+.cta {
+    background-color: var(--accent-color-dark);
+    border-radius: 0.25rem;
+    color: var(--strong-color);
+    font-weight: var(--bold-fw);
+    font-size: var(--mobile-small-m-font);
+    padding: 0.3rem 0.75rem;
+    width: fit-content;
+    text-decoration: none;
 }
 
 h1,h3,h4 {
@@ -92,7 +130,7 @@ section {
     color: var(--strong-color);
     font-weight: var(--bold-fw);
     font-size: var(--mobile-small-m-font);
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 0.75rem;
     width: fit-content;
     text-decoration: none;
 }
@@ -367,6 +405,55 @@ button {
         max-width: 90vw;
     }
 
+    header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background-color: var(--bg-color);
+        z-index: 100;
+        padding: 0.1rem 0;
+    }
+
+    .header-container {
+        display: flex;
+        flex-direction: row;
+        max-width: 90vw;
+        margin: auto;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header .logo {
+        font-size: var(--desktop-s-font);
+        font-weight: var(--semibold-fw);
+        color: var(--strong-color);
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: row;
+        font-size: var(--desktop-t-font);
+        font-weight: var(--regular-fw);
+        list-style: none;
+        gap: 3em;
+    }
+
+    header nav ul a {
+        color: var(--light-color);
+        text-decoration: none;
+    }
+
+    .cta {
+        background-color: var(--accent-color-dark);
+        border-radius: 0.25rem;
+        color: var(--strong-color);
+        font-weight: var(--bold-fw);
+        font-size: var(--mobile-small-m-font);
+        padding: 1rem 1.5rem;
+        width: fit-content;
+        text-decoration: none;
+    }
+
     section {
         margin: 40rem 0;
     }
@@ -514,7 +601,7 @@ button {
 
 @media only screen and (min-width: 1920px) {
 
-    .container {
+    .container, .header-container {
         max-width: 1680px;
         margin: auto;
     }
